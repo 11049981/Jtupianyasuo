@@ -9,17 +9,35 @@
 <body>
     <div class="container">
         <h1>图片压缩工具</h1>
-        <input type="file" id="upload" accept="image/png, image/jpeg">
+        <input type="file" id="upload" accept="image/png, image/jpeg, image/webp">
+        
+        <!-- 新增格式转换控制 -->
+        <div class="format-control">
+            <p>当前格式: <span id="currentFormat">-</span></p>
+            <label for="targetFormat">转换格式:</label>
+            <select id="targetFormat">
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/png">PNG</option>
+                <option value="image/webp">WebP</option>
+            </select>
+        </div>
+
         <div class="preview">
             <div>
                 <h2>原始图片</h2>
                 <img id="originalImage" alt="原始图片预览">
-                <p id="originalSize"></p>
+                <div class="image-info">
+                    <p id="originalSize">大小: -</p>
+                    <p id="originalDimensions">尺寸: -</p>
+                </div>
             </div>
             <div>
                 <h2>压缩图片</h2>
                 <img id="compressedImage" alt="压缩图片预览">
-                <p id="compressedSize"></p>
+                <div class="image-info">
+                    <p id="compressedSize">大小: -</p>
+                    <p id="compressedDimensions">尺寸: -</p>
+                </div>
             </div>
         </div>
         <button id="downloadBtn">下载压缩图片</button>
